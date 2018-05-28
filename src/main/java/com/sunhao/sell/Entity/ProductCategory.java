@@ -17,20 +17,30 @@ import java.util.Date;
 @Data
 public class ProductCategory {
 
-    //类目ID
+    /**
+     * 类目ID
+     */
     @Id
     @GeneratedValue
     private int categoryId;
 
-    //类目名字
+    /**
+     * 类目名字
+     */
     private String categoryName;
 
-    //类目编号
+    /**
+     * 类目编号
+     */
     private int categoryType;
 
-    //创建时间
+    /**
+     * 创建时间
+     */
     private Date createTime;
 
-    //更新时间
+    /**
+     * 更新时间
+     */
     private Date updateTime;
 }
