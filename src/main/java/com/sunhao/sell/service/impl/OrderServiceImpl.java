@@ -49,12 +49,12 @@ public class OrderServiceImpl implements OrderService {
         //1. 查询商品（数量，价格）
         for (OrderDetail orderDetail : orderDTO.getOrderDetailList()) {
             ProductInfo productInfo = productInfoService.findOne(orderDetail.getProductId());
-            if (productInfo != null) {
+            if (productInfo == null) {
                 throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
             }
 
             //计算总价
-            orderAmount = orderDetail.getProductPrice()
+            orderAmount = productInfo.getProductPrice()
                     .multiply(new BigDecimal(orderDetail.getProductQuantity()))
                     .add(orderAmount);
 
@@ -67,9 +67,10 @@ public class OrderServiceImpl implements OrderService {
 
         //写入订单数据库
         OrderMaster orderMaster = new OrderMaster();
+        BeanUtils.copyProperties(orderDTO, orderMaster);
         orderMaster.setOrderId(orderId);
         orderMaster.setOrderAmount(orderAmount);
-        BeanUtils.copyProperties(orderDTO, orderMaster);
+
         orderMasterRepository.save(orderMaster);
 
         //4. 扣库存
