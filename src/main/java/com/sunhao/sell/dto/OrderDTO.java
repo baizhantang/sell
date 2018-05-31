@@ -1,5 +1,6 @@
 package com.sunhao.sell.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.sunhao.sell.Entity.OrderDetail;
 import com.sunhao.sell.enums.OrderStatusEnum;
 import com.sunhao.sell.enums.PayStatusEnum;
@@ -14,6 +15,7 @@ import java.util.List;
  * @author sunhao
  */
 @Data
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class OrderDTO {
 
     /** 订单ID. */

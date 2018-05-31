@@ -19,6 +19,8 @@ public enum ResultEnum {
 
     CART_EMPTY(18, "购物车不能为空"),
 
+    ORDER_OWNER_ERROR(19, "该订单不属于当前用户"),
+
     PARAM_ERROR(1, "参数不正确"),
     ;
 
