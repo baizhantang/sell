@@ -9,9 +9,9 @@ spring:
 server:
   context-path: /sell
 wechat:
-  mpAppId: wxf877e195a0cf0034
-  mpAppSecret: 8c3fa673cc3b89aeeea463e73b5a161a
-  mchId:
-  mchKey:
-  keyPath:
-  notifyUrl:
+  mpAppId: wxd898fcb01713c658
+  mpAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  mchId: 1483469312
+  mchKey: C5245D70627C1F8E9964D494B0735025
+  keyPath: http://app-all.b0.upaiyun.com/01d3059e868cedea3b361b2ad1c05254.p12
+  notifyUrl: http://sunhao.mynatapp.cc/sell/pay/notify

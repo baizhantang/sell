@@ -38,7 +38,7 @@ public class OrderServiceImplTest {
         String orderId = KeyUtil.genUniqueKey();
 
         List<OrderDetail> orderDetailList = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             OrderDetail orderDetail = new OrderDetail();
             orderDetail.setOrderId(orderId);
             orderDetail.setDetailId(KeyUtil.genUniqueKey());
